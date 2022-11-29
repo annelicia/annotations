@@ -1,0 +1,28 @@
+.homeContainer {
+    position: relative;
+    padding: 2rem;
+}
+
+.image {
+    position: absolute;
+    z-index: -1;
+    border: 1px solid black;
+    max-width: none;
+}
+
+.activeMovePointer {
+    position: absolute;
+    z-index: 10;
+    cursor: move;
+}
+
+.activeDrawPointer {
+    position: absolute;
+    z-index: 10;
+    cursor: crosshair;
+}
+
+.background {
+    position: absolute;
+    z-index: 5;
+}
