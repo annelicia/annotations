@@ -291,12 +291,6 @@ export default function ImageWithTools({ chosenImg }: ImageWithToolsProps) {
                 onMouseLeave={handleMouseLeave}
             >
                 <>
-                    <DrawingShape
-                        startPoint={startPoint}
-                        endPoint={endPoint}
-                        selectedTool={selectedTool}
-                        selectedColor={selectedColor}
-                    />
                     <DrawnShapes
                         annotations={annotations}
                         selectedAnnotationTmp={selectedAnnotationTmp}
@@ -304,6 +298,12 @@ export default function ImageWithTools({ chosenImg }: ImageWithToolsProps) {
                         setSelectedAnnotation={setSelectedAnnotation}
                         selectedTool={selectedTool}
                         contextCanvasRef={contextCanvasRef}
+                    />
+                    <DrawingShape
+                        startPoint={startPoint}
+                        endPoint={endPoint}
+                        selectedTool={selectedTool}
+                        selectedColor={selectedColor}
                     />
                 </>
             </svg>
