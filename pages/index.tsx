@@ -19,12 +19,21 @@ export default function Home() {
       </Head>
       {!chosenImg ?
         (
-          <div className="flex justify-center items-center h-screen w-screen">
-            <input
-              type="file"
-              onChange={handleChangeInput}
-            />
-          </div>
+          <>
+            <div className="flex flex-col gap-10 justify-center items-center h-screen w-screen">
+              <div className="flex gap-5 items-center text-5xl">
+                <img src="./image-rabbit.svg" width="50" height="50" />
+                <h1 className="font-bold">Welcome to Annotations Tool</h1>
+                <img src="./image-shapes.svg" width="50" height="50" />
+              </div>
+              <div>Please choose an image to start drawing</div>
+              <img src="./image-drawing.svg" width="100" height="80" />
+              <input
+                type="file"
+                onChange={handleChangeInput}
+              />
+            </div>
+          </>
         ) : (
           <ImageWithTools chosenImg={chosenImg} />
         )}
