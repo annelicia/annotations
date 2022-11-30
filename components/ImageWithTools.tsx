@@ -53,8 +53,8 @@ export default function ImageWithTools({ chosenImg }: ImageWithToolsProps) {
     const [endPoint, setEndPoint] = useState<Point>();
     const [isDrawing, setIsDrawing] = useState(false);
     const [annotations, setAnnotations] = useState<Annotation[]>([]);
-    const [selectedTool, setSelectedTool] = useState(ToolsType.RECT);
-    const [selectedColor, setSelectedColor] = useState(ColorsType.BLACK);
+    const [selectedTool, setSelectedTool] = useState(ToolsType.RECT_FRAME);
+    const [selectedColor, setSelectedColor] = useState(ColorsType.RED);
     const [selectedWidthPen, setSelectedWidthPen] = useState(WidthsPen.SMALL);
     const [selectedAnnotation, setSelectedAnnotation] = useState<number | undefined>();
     let selectedAnnotationTmp: number | undefined = undefined;
