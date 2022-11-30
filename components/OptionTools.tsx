@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, MutableRefObject, RefObject, SetStateAction, useRef, useState } from "react";
+import { ChangeEvent, Dispatch, MutableRefObject, RefObject, SetStateAction, useRef } from "react";
 import { ColorsType, ToolsType, WidthsPen } from "../constants/Enums";
 import { Annotation, ImageSize } from "./ImageWithTools";
 
@@ -126,12 +126,12 @@ export default function OptionTools(optionToolsProps: OptionToolsProps) {
                 context.drawImage(imgPen, 0, 0, imageSize.width, imageSize.height);
 
                 let png = canvas.toDataURL();
-                const download = (href: string, name: string) => {
+                const download = (href: string) => {
                     if (!downloadRef.current) return;
                     downloadRef.current.href = href;
                     downloadRef.current.click();
                 }
-                download(png, "image.png");
+                download(png);
             }
             imgPen.src = penURL;
         }
@@ -183,7 +183,7 @@ export default function OptionTools(optionToolsProps: OptionToolsProps) {
             >
                 Remove All
             </button>
-            <a ref={downloadRef} download></a>
+            <a ref={downloadRef} download="image.png"></a>
         </div>
     );
 }
